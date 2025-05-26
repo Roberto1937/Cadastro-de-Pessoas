@@ -4,16 +4,23 @@
         <p class="alert alert-warning">O campo é obrigatorio.</p>
     }
     
-    <input type="text" formControlName="Nome" placeholder="Nome" class="form-control">
+    <input type="text"   formControlName="Nome" placeholder="Nome" class="form-control">
    
-    <input type="number" formArrayName="Idade" placeholder="Idade" class="form-control">
+    <input type="number" formControlName="Idade" placeholder="Idade" class="form-control">
    
-    <input type="text" formArrayName="Cidade" placeholder="Cidade" class="form-control">
+    <input type="text"   formControlName="Cidade" placeholder="Cidade" class="form-control">
 
-    <input type="button" value="Cadastrar" class="btn btn-primary">
-    <input type="button" value="Alterar" class="btn btn-primary">
-    <input type="button" value="Remover" class="btn btn-primary">
-    <input type="button" value="Cancelar" class="btn btn-primary">
+
+    @if (bntCadastrar) {
+
+        <input type="button" value="Cadastrar" (click)="cadastrar()" class="btn btn-primary" [disabled]="Formulario.invalid">
+    }
+    @else {
+
+        <input type="button" value="Alterar" class="btn btn-primary" [disabled]="Formulario.invalid">
+        <input type="button" value="Remover" class="btn btn-primary">
+        <input type="button" value="Cancelar" class="btn btn-primary">
+    }
 
 </form>
 

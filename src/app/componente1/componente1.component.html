@@ -1,0 +1,33 @@
+<form [formGroup]="Formulario">
+
+    @if(Formulario.get('Nome').hasError('requered') && Formulario.get('Nome').touched){
+        <p class="alert alert-warning">O campo é obrigatorio.</p>
+    }
+    
+    <input type="text" formControlName="Nome" placeholder="Nome" class="form-control">
+   
+    <input type="number" formArrayName="Idade" placeholder="Idade" class="form-control">
+   
+    <input type="text" formArrayName="Cidade" placeholder="Cidade" class="form-control">
+
+    <input type="button" value="Cadastrar" class="btn btn-primary">
+    <input type="button" value="Alterar" class="btn btn-primary">
+    <input type="button" value="Remover" class="btn btn-primary">
+    <input type="button" value="Cancelar" class="btn btn-primary">
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Cidade</th>
+            <th>Selecionar</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
